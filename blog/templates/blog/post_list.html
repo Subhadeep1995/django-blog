@@ -3,7 +3,8 @@
     {% block content %}
 
         {% for post in posts %}
-            <li><a href = "#">{{post.title}}</a></li>
+            <li><a href = "{% url 'post_detail' id=post.id %}">{{post.title}}</a></li>
         {% endfor %}
-    
+    <hr>
+    <a href="{% url 'post_new' %}" class="btn btn-primary">Add New Post</a>
     {% endblock %}
