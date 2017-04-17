@@ -5,4 +5,7 @@
     <i>by {{post.author.first_name}} on {{post.created_date}}</i>
     <hr>
     <p>{{post.text}}</p>
+    <br><br><br><br><br><br>
+    <a href="{% url 'post_list' %}">Back to Home</a><br>
+    <a href="{% url 'post_delete' id=post.id %}">Delete</a>
 {% endblock %}

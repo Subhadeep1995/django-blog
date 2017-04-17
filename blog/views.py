@@ -25,3 +25,9 @@ def post_new(request):
         form = PostForm()
         form_type = 'Create New Post'
         return render(request, 'blog/post_edit.html', {'form': form, 'form_type':form_type})
+
+
+def post_delete(request, id):
+    context = get_object_or_404(Post, id=id)
+    context.delete()
+    return redirect('post_list')
