@@ -7,5 +7,7 @@
     <p>{{post.text}}</p>
     <br><br><br><br><br><br>
     <a href="{% url 'post_list' %}">Back to Home</a><br>
+    {% if request.user == post.author %}
     <a href="{% url 'post_delete' id=post.id %}">Delete</a>
+    {% endif %}
 {% endblock %}
