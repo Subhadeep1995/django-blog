@@ -10,3 +10,10 @@ class RegisterForm(forms.ModelForm):
         model = User
         fields = ('first_name', 'last_name', 'username', 'email', 'password')
 
+
+class LoginForm(forms.Form):
+    username = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput)
+    
+
+
